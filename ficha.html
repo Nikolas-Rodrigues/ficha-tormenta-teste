@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ficha Tormenta 20</title>
+    <link rel="stylesheet" href="ficha.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body>
+    <nav class="menu">
+      <div class="expandir">
+        <i class="bi bi-list" id="botao"></i>
+      </div>
+
+      <ul>
+        <li class="itemMenu">
+          <a href="#" onclick="modal_pericia()">
+            <span class="icon"><i class="bi bi-book"></i></span>
+            <span class="txtLink">Pericias</span>
+          </a>
+        </li>
+
+        <li class="itemMenu">
+          <a href="#" onclick="modal_equips()">
+            <span class="icon"><i class="bi bi-basket2"></i></span>
+            <span class="txtLink">Equipamentos</span>
+          </a>
+        </li>
+
+        <li class="itemMenu">
+          <a href="#" onclick="modal_skills()">
+            <span class="icon"><i class="bi bi-heart-pulse"></i></span>
+            <span class="txtLink">Skills</span>
+          </a>
+        </li>
+
+        <li class="itemMenu">
+          <a href="#" onclick="modal_habilidades()">
+            <span class="icon"><i class="bi bi-search"></i></span>
+            <span class="txtLink">Habilidades</span>
+          </a>
+        </li>
+
+        <li class="itemMenu">
+          <a href="#">
+            <span class="icon"><i class="bi bi-tropical-storm"></i></span>
+            <span class="txtLink">Spells</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="atributosG">
+      <h1>Atributos</h1>
+    </div>
+    <div class="atributos">
+      <span id="tituloFor">Força:</span>
+      <input type="number" id="forca" name="forca" /><span id="Mfor"></span>
+
+      <span id="tituloDes">Destreza:</span>
+      <input type="number" id="destreza" name="destreza" />
+      <span id="Mdes"></span>
+
+      <span id="tituloConst"> Constituição:</span>
+      <input type="number" id="constituicao" name="constituicao" />
+      <span id="Mcon"></span>
+
+      <span id="tituloInt">Inteligencia:</span>
+      <input type="number" id="inteligencia" name="inteligencia" />
+      <span id="Mint"></span>
+
+      <span id="tituloSab">Sabedoria:</span>
+      <input type="number" id="sabedoria" name="sabedoria" />
+      <span id="Msab"></span>
+
+      <span id="tituloCar">Carisma:</span>
+      <input type="number" id="carisma" name="carisma" />
+      <span id="Mcar"></span>
+    </div>
+
+    <div class="def">
+      <select name="raca" id="raca">
+        <option value="0">Escolha raça</option>
+        <option value="humano">Humano</option>
+        <option value="anao">Anão</option>
+        <option value="dahllan">Dahllan</option>
+        <option value="elfo">Elfo</option>
+        <option value="goblin">Goblin</option>
+        <option value="lefou">Lefou</option>
+        <option value="minotauro">Minotauro</option>
+        <option value="qareen">Qareen</option>
+        <option value="golem">Golem</option>
+        <option value="hynne">Hynne</option>
+        <option value="kliren">Kliren</option>
+        <option value="medusa">Medusa</option>
+        <option value="osteon">Osteon</option>
+        <option value="sereia">Sereia</option>
+        <option value="silfide">Sílfide</option>
+        <option value="aggelus">Suraggel(Aggelus)</option>
+        <option value="sulfure">Suraggel(Sulfure)</option>
+        <option value="trog">Trog</option>
+      </select>
+
+      <select name="Nivel" id="nivel">
+        <option value="0">Escolha o Nivel</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+      </select>
+      <select name="classe" id="classe">
+        <option value="semClasse">Escolha a Classe</option>
+        <option value="bruxo">Arcanista(Bruxo)</option>
+        <option value="feiticeiro">Arcanista(feiticeiro)</option>
+        <option value="mago">Arcanista(mago)</option>
+        <option value="barbaro">Bárbaro</option>
+        <option value="bardo">Bardo</option>
+        <option value="bucaneiro">Bucaneiro</option>
+        <option value="cacador">Caçador</option>
+        <option value="cavaleiro">Cavaleiro</option>
+        <option value="clerigo">Clérigo</option>
+        <option value="druida">Druida</option>
+        <option value="guerreiro">Guerreiro</option>
+        <option value="inventor">Inventor</option>
+        <option value="ladino">Ladino</option>
+        <option value="lutador">Lutador</option>
+        <option value="nobre">Nobre</option>
+        <option value="paladino">Paladino</option>
+      </select>
+    </div>
+
+    <div class="maos">
+      <select name="m1" id="m1">
+        <option value="semArma1">Escolha a Arma da mão direita</option>
+        <option value="0">Adaga</option>
+        <option value="1">Ataque desarmado</option>
+        <option value="2">Espada curta</option>
+        <option value="3">Foice</option>
+        <option value="4">Manopla</option>
+        <option value="5">Clava</option>
+        <option value="6">Lança</option>
+        <option value="7">Maça</option>
+        <option value="8">Bordão</option>
+        <option value="9">Pique</option>
+        <option value="10">Tacape</option>
+        <option value="11">Arco Curto</option>
+        <option value="12">Besta leve</option>
+        <option value="13">Azagaia</option>
+        <option value="14">Funda</option>
+        <option value="15">Escudo leve</option>
+        <option value="16">Machadinha</option>
+        <option value="17">Cimitarra</option>
+        <option value="18">Escudo pesado</option>
+        <option value="19">Espada longa</option>
+        <option value="20">Florete</option>
+        <option value="21">Machado de batalha</option>
+        <option value="22">Mangual</option>
+        <option value="23">Martelo de guerra</option>
+        <option value="24">Picareta</option>
+        <option value="25">Tridente</option>
+        <option value="26">Alabarda</option>
+        <option value="27">Alfange</option>
+        <option value="28">Gadanho</option>
+        <option value="29">Lança montada</option>
+        <option value="30">Machado de guerra</option>
+        <option value="31">Montante</option>
+        <option value="32">Arco longo</option>
+        <option value="33">Besta pesada</option>
+        <option value="34">Chicote</option>
+        <option value="35">Espada bastarda</option>
+        <option value="36">Katana</option>
+        <option value="37">Machado anão</option>
+        <option value="38">Corrente de espinhos</option>
+        <option value="39">Machado táurico</option>
+      </select>
+
+      <select name="arm_equip" id="arm_equip">
+        <option value="0">Escolha sua Armadura</option>
+        <option value="0">Pelado</option>
+        <option value="1">Armadura Acolchoada</option>
+        <option value="2">Armadura de Couro</option>
+        <option value="3">Couro batido</option>
+        <option value="4">Gibão de peles</option>
+        <option value="5">Couraça</option>
+        <option value="6">Brunea</option>
+        <option value="7">Cota de Malha</option>
+        <option value="8">Loriga Segmentada</option>
+        <option value="9">Meia armadura</option>
+        <option value="10">Armadura Completa</option>
+      </select>
+
+      <select name="m2" id="m2">
+        <option value="semArma1">Escolha a Arma da mão esquerda</option>
+        <option value="0">Adaga</option>
+        <option value="1">Ataque desarmado</option>
+        <option value="2">Espada curta</option>
+        <option value="3">Foice</option>
+        <option value="4">Manopla</option>
+        <option value="5">Clava</option>
+        <option value="6">Lança</option>
+        <option value="7">Maça</option>
+        <option value="8">Bordão</option>
+        <option value="9">Pique</option>
+        <option value="10">Tacape</option>
+        <option value="11">Arco Curto</option>
+        <option value="12">Besta leve</option>
+        <option value="13">Azagaia</option>
+        <option value="14">Funda</option>
+        <option value="15">Escudo leve</option>
+        <option value="16">Machadinha</option>
+        <option value="17">Cimitarra</option>
+        <option value="18">Escudo pesado</option>
+        <option value="19">Espada longa</option>
+        <option value="20">Florete</option>
+        <option value="21">Machado de batalha</option>
+        <option value="22">Mangual</option>
+        <option value="23">Martelo de guerra</option>
+        <option value="24">Picareta</option>
+        <option value="25">Tridente</option>
+        <option value="26">Alabarda</option>
+        <option value="27">Alfange</option>
+        <option value="28">Gadanho</option>
+        <option value="29">Lança montada</option>
+        <option value="30">Machado de guerra</option>
+        <option value="31">Montante</option>
+        <option value="32">Arco longo</option>
+        <option value="33">Besta pesada</option>
+        <option value="34">Chicote</option>
+        <option value="35">Espada bastarda</option>
+        <option value="36">Katana</option>
+        <option value="37">Machado anão</option>
+        <option value="38">Corrente de espinhos</option>
+        <option value="39">Machado táurico</option>
+      </select>
+    </div>
+
+    <div class="calc">
+      <button id="calc">Calcular</button>
+    </div>
+
+    <div class="saidas">
+      Hp:<span id="vidamax"></span> / <span id="vida"></span><br />
+      <label for="vidano">dano tomado</label>
+      <input type="number" id="vidano" name="vidano" onchange="tomar_dano()" />
+      <br />
+      Mp:<span id="manamax"></span> / <span id="mana"></span><br />
+      <label for="managasto">Mana gasta</label>
+      <input
+        type="number"
+        id="managasto"
+        name="managasto"
+        onchange="manaGasta()"
+      />
+      <br />
+      Armadura:<span id="armor"></span><br />
+      Deslocamento:<span id="desloc"></span><br />
+    </div>
+
+    <div class="arma1">
+      Arma 1: <span id="nome_arma1"></span><br />
+      Acerto: <span id="acerto_arma1"></span><br />
+      Dano: <span id="dano_arma1"></span><br />
+      Critico: <span id="critico_arma1"></span><br />
+      Multiplicador: <span id="multiplicador_arma1"></span><br />
+      <br />
+    </div>
+
+    <div class="arma2">
+      Arma 2: <span id="nome_arma2"></span><br />
+      Acerto: <span id="acerto_arma2"></span><br />
+      Dano: <span id="dano_arma2"></span><br />
+      Critico: <span id="critico_arma2"></span><br />
+      Multiplicador: <span id="multiplicador_arma2"></span><br />
+    </div>
+
+    <!-- Modais -->
+
+    <div id="modal_pericia" class="modal">
+      <!-- Conteúdo do modal -->
+      <div class="modal-content">
+        <span class="close" id="closePericia">&times;</span>
+
+        <label
+          ><input type="checkbox" id="cx1" onchange="p1()" />acrobacia =
+          <span id="acrobacia"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx2" onchange="p2()" /> adestramento =
+          <span id="adestramento"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx3" onchange="p3()" /> atletismo =
+          <span id="atletismo"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx4" onchange="p4()" /> atuação =
+          <span id="atuacao"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx5" onchange="p5()" /> cavalgar =
+          <span id="cavalgar"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx6" onchange="p6()" /> conhecimento =
+          <span id="conhecimento"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx7" onchange="p7()" /> cura =
+          <span id="cura"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx8" onchange="p8()" /> diplomacia =
+          <span id="diplomacia"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx9" onchange="p9()" /> enganação =
+          <span id="enganacao"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx10" onchange="p10()" /> fortitude =
+          <span id="fortitude"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx11" onchange="p11()" /> furtividade =
+          <span id="furtividade"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx12" onchange="p12()" /> guerra =
+          <span id="guerra"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx13" onchange="p13()" /> iniciativa =
+          <span id="iniciativa"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx14" onchange="p14()" /> intimidação =
+          <span id="intimidacao"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx15" onchange="p15()" /> intuição =
+          <span id="intuicao"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx16" onchange="p16()" /> investigação =
+          <span id="investigacao"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx17" onchange="p17()" /> jogatina =
+          <span id="jogatina"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx18" onchange="p18()" /> ladinagem =
+          <span id="ladinagem"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx19" onchange="p19()" /> luta(força) =
+          <span id="luta_forca"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx20" onchange="p20()" /> luta(destreza) =
+          <span id="luta_destreza"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx21" onchange="p21()" /> misticismo =
+          <span id="misticism0"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx22" onchange="p22()" /> nobreza =
+          <span id="nobreza"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx23" onchange="p23()" /> oficio =
+          <span id="ofici0"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx24" onchange="p24()" /> percepção =
+          <span id="percepcao"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx25" onchange="p25()" /> pilotagem =
+          <span id="pilotagem"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx26" onchange="p26()" /> pontaria(tiro) =
+          <span id="pontaria_tiro"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx27" onchange="p27()" />
+          pontaria(arremesso) = <span id="pontaria_arremesso"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx28" onchange="p28()" /> reflexo =
+          <span id="reflexo"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx29" onchange="p29()" /> religião =
+          <span id="religiao"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx30" onchange="p30()" /> sobrevivência =
+          <span id="sobrevivencia"></span
+        ></label>
+        <label
+          ><input type="checkbox" id="cx31" onchange="p31()" /> vontade =
+          <span id="vontade"></span
+        ></label>
+      </div>
+    </div>
+
+    <div id="modal_equips" class="modal">
+      <!-- Conteúdo do modal -->
+      <div class="modal-content">
+        <span class="close" id="closeEquipamentos" onclick="closemodal_equips()"
+          >&times;</span
+        >
+
+        <input
+          type="text"
+          id="add_item"
+          onchange="additem()"
+          placeholder="Adicionar"
+        />
+        <input
+          type="text"
+          id="remov_item"
+          onchange="removerItem()"
+          placeholder="Remover"
+        />
+        <div class="saidaGerson">
+          <div id="array-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal_skills" class="modal_skills">
+      <!-- Conteúdo do modal -->
+      <div class="modal-skills">
+        <button class="geral" onclick="mostrarGeral()">Poderes gerais</button>
+        <button id="bnt-origem" onclick="mostrarOrigem()">
+          Poderes origem
+        </button>
+        <button id="bnt-classe" onclick="mostrarClasse()">
+          Poderes classe
+        </button>
+        <button id="bnt-deus" onclick="mostrarDeuses()">
+          Poderes de Deuses
+        </button>
+        <button id="bnt-tormenta" onclick="mostrarTormenta()">
+          Poderes tormenta
+        </button>
+        <div class="toto">
+          <span class="close" id="closeskills" onclick="closemodal_skills()"
+            >&times;</span
+          >
+          <label
+            ><input type="checkbox" id="1" onchange="b1()" />Acuidade com
+            Arma</label
+          >
+          <label
+            ><input type="checkbox" id="2" onchange="b2()" />Arma Secundária
+            Grande</label
+          >
+          <label
+            ><input type="checkbox" id="3" onchange="b3()" />Arremesso
+            Potente</label
+          >
+          <label
+            ><input type="checkbox" id="4" onchange="b4()" />Ataque
+            Pesado</label
+          >
+          <label
+            ><input type="checkbox" id="5" onchange="b5()" />Ataque
+            Poderoso</label
+          >
+          <label
+            ><input type="checkbox" id="6" onchange="b6()" />Ataque
+            Preciso</label
+          >
+          <label
+            ><input type="checkbox" id="7" onchange="b7()" />Bloqueio com
+            Escudo</label
+          >
+          <label
+            ><input type="checkbox" id="8" onchange="b8()" />Carga de
+            Cavalaria</label
+          >
+          <label
+            ><input type="checkbox" id="9" onchange="b9()" />Combate
+            Defensivo</label
+          >
+          <label
+            ><input type="checkbox" id="10" onchange="b10()" />Derrubar
+            Aprimorado</label
+          >
+          <label
+            ><input type="checkbox" id="11" onchange="b11()" />Desarmar
+            Aprimorado</label
+          >
+          <label
+            ><input type="checkbox" id="12" onchange="b12()" />Disparo
+            Preciso</label
+          >
+          <label
+            ><input type="checkbox" id="13" onchange="b13()" />Disparo
+            Rápido</label
+          >
+          <label
+            ><input type="checkbox" id="14" onchange="b14()" />Empunhadura
+            Poderosa</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              id="15"
+              onchange="b15()"
+            />Encouraçado</label
+          >
+
+          <label
+            ><input type="checkbox" id="16" onchange="b16()" />Esquiva</label
+          >
+
+          <label
+            ><input type="checkbox" id="17" onchange="b17()" />Estilo de Arma e
+            Escudo</label
+          >
+          <label
+            ><input type="checkbox" id="18" onchange="b18()" />Estilo de
+            Arremesso</label
+          >
+          <label
+            ><input type="checkbox" id="19" onchange="b19()" />Estilo de
+            Disparo</label
+          >
+          <label
+            ><input type="checkbox" id="20" onchange="b20()" />Estilo de Duas
+            Armas</label
+          >
+          <label
+            ><input type="checkbox" id="21" onchange="b21()" />Estilo de Duas
+            Mãos</label
+          >
+          <label
+            ><input type="checkbox" id="22" onchange="b22()" />Estilo de Uma
+            Arma</label
+          >
+          <label
+            ><input type="checkbox" id="23" onchange="b23()" />Estilo
+            Desarmado</label
+          >
+          <label
+            ><input type="checkbox" id="24" onchange="b24()" />Fanático</label
+          >
+          <label
+            ><input type="checkbox" id="25" onchange="b25()" />Finta
+            Aprimorada</label
+          >
+          <label
+            ><input type="checkbox" id="26" onchange="b26()" />Foco em Arma
+            <input type="text" />
+          </label>
+          <label
+            ><input type="checkbox" id="27" onchange="b27()" />Ginete</label
+          >
+
+          <label
+            ><input
+              type="checkbox"
+              id="28"
+              onchange="b28()"
+            />Inexpugnável</label
+          >
+
+          <label
+            ><input type="checkbox" id="29" onchange="b29()" />Mira
+            Apurada</label
+          >
+          <label
+            ><input type="checkbox" id="30" onchange="b30()" />Presença
+            Aterradora</label
+          >
+          <label
+            ><input type="checkbox" id="31" onchange="b31()" />Proficiência:
+            <input type="text"
+          /></label>
+          <label
+            ><input type="checkbox" id="32" onchange="b32()" />Quebrar
+            Aprimorado</label
+          >
+          <label
+            ><input type="checkbox" id="33" onchange="b33()" />Reflexos de
+            Combate</label
+          >
+          <label
+            ><input type="checkbox" id="34" onchange="b34()" />Saque
+            Rápido</label
+          >
+          <label
+            ><input type="checkbox" id="35" onchange="b35()" />Trespassar</label
+          >
+          <label
+            ><input type="checkbox" id="36" onchange="b36()" />Vitalidade</label
+          >
+        </div>
+        <div class="toto2">
+          <label>
+            <input type="checkbox" id="37" onchange="b37()" />Membro da
+            Igreja</label
+          >
+          <label>
+            <input type="checkbox" id="38" onchange="b38()" />Amigo
+            Especial</label
+          >
+          <label>
+            <input type="checkbox" id="39" onchange="b39()" />Lembranças
+            Graduais</label
+          >
+          <label>
+            <input type="checkbox" id="40" onchange="b40()" />Sangue Azul</label
+          >
+          <label>
+            <input type="checkbox" id="41" onchange="b41()" />Frutos do
+            Trabalho</label
+          >
+          <label>
+            <input type="checkbox" id="42" onchange="b42()" />Dom
+            artístico</label
+          >
+          <label>
+            <input type="checkbox" id="43" onchange="b43()" />Esse
+            Cheiro...</label
+          >
+          <label>
+            <input type="checkbox" id="44" onchange="b44()" />À Prova de
+            Tudo</label
+          >
+          <label>
+            <input type="checkbox" id="45" onchange="b45()" />Confissão</label
+          >
+          <label>
+            <input type="checkbox" id="46" onchange="b46()" />Alpinista
+            Social</label
+          >
+          <label>
+            <input type="checkbox" id="47" onchange="b47()" />Truque de
+            Mágica</label
+          >
+          <label>
+            <input type="checkbox" id="48" onchange="b48()" />Punguista</label
+          >
+          <label>
+            <input type="checkbox" id="49" onchange="b49()" />Médico de
+            Campo</label
+          >
+          <label>
+            <input type="checkbox" id="50" onchange="b50()" />Busca
+            Interior</label
+          >
+          <label>
+            <input type="checkbox" id="51" onchange="b51()" />Desejo de
+            Liberdade</label
+          >
+          <label>
+            <input type="checkbox" id="52" onchange="b52()" />Palpite
+            Fundamentado</label
+          >
+          <label>
+            <input type="checkbox" id="53" onchange="b53()" />Água no
+            Feijão</label
+          >
+          <label>
+            <input type="checkbox" id="54" onchange="b54()" />Cultura
+            Exótica</label
+          >
+          <label>
+            <input type="checkbox" id="55" onchange="b55()" />Pão e Circo</label
+          >
+          <label>
+            <input type="checkbox" id="56" onchange="b56()" />Detetive</label
+          >
+          <label>
+            <input type="checkbox" id="57" onchange="b57()" />Herança</label
+          >
+          <label>
+            <input type="checkbox" id="58" onchange="b58()" />Amigo dos
+            Plebeus</label
+          >
+          <label>
+            <input type="checkbox" id="59" onchange="b59()" />Passagem de
+            Navio</label
+          >
+          <label>
+            <input type="checkbox" id="60" onchange="b60()" />Vendedor de
+            Carcaças</label
+          >
+          <label>
+            <input type="checkbox" id="61" onchange="b61()" />Rede de
+            Contatos</label
+          >
+          <label>
+            <input type="checkbox" id="62" onchange="b62()" />Negociação</label
+          >
+          <label>
+            <input type="checkbox" id="63" onchange="b63()" />Escavador</label
+          >
+          <label>
+            <input type="checkbox" id="64" onchange="b64()" />Mochileiro</label
+          >
+          <label>
+            <input type="checkbox" id="65" onchange="b65()"/>Quebra-galho</label
+          >
+          <label>
+            <input type="checkbox" id="66" onchange="b66()" />Estoico</label
+          >
+          <label>
+            <input type="checkbox" id="67" onchange="b67()" />Antigo
+            Mestre</label
+          >
+          <label>
+            <input type="checkbox" id="68" onchange="b68()" />Vida
+            Rústica</label
+          >
+          <label>
+            <input type="checkbox" id="69" onchange="b69()" />Influência
+            Militar</label
+          >
+          <label>
+            <input type="checkbox" id="70" onchange="b70()" />Gororoba</label
+          >
+          <label>
+            <input type="checkbox" id="71" onchange="b71()" />Esforçado</label
+          >
+        </div>
+
+        <div class="toto3">
+          <label> <input type="checkbox" id="" onchange="b()" />geremias</label>
+        </div>
+
+        <div class="toto4">
+          <label>
+            <input type="checkbox" id="" onchange="b()" />gersonelsom</label
+          >
+        </div>
+
+        <div class="toto5">
+          <label>
+            <input type="checkbox" id="" onchange="b()" />trantrosbelison</label
+          >
+        </div>
+      </div>
+    </div>
+
+    <div id="modal_habilidades" class="modal">
+      <!-- Conteúdo do modal -->
+      <div class="modal-contente">
+        <span
+          class="close"
+          id="closehabilidades"
+          onclick="closemodal_habilidades()"
+          >&times;</span
+        >
+
+        <div id="saidaskillsGeral"></div>
+        <div id="saidaskillsRaca"></div>
+        <div id="saidaskillsClasse"></div>
+        <div id="saidaskillsOrigem"></div>
+
+        <div class="saidaAbidlidade">
+          <form id="searchForm">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Digite sua pesquisa"
+            />
+            <button type="submit">Pesquisar</button>
+          </form>
+
+          <div id="searchResults"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="ficha.js"></script>
+  </body>
+</html>

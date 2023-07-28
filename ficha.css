@@ -1,0 +1,583 @@
+body {
+    background-image: linear-gradient(to bottom, #952921, black);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    color: white;
+  }
+  
+  .status {
+    font-size: 30px;
+  }
+  
+  .calc {
+    text-align: center;
+    padding-top: 10px;
+  }
+  
+  .def {
+    left: 50%;
+    text-align: center;
+    columns: 1;
+  }
+  
+  .atributosG {
+    text-align: center;
+    font-size: 25px;
+  }
+  
+  .atributos {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 200px;
+    font-size: 20px;
+    margin: 2px;
+  }
+  
+  .atributos input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+  }
+  
+  #tituloFor {
+    position: absolute;
+    top: 12%;
+    left: 20%;
+  }
+  
+  #forca {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+  }
+  
+  #Mfor {
+    position: absolute;
+    top: 45%;
+    left: 21%;
+  }
+  
+  
+  #tituloDes {
+    position: absolute;
+    top: 12%;
+    left: 29.5%;
+  }
+  
+  #destreza {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+  }
+  
+  #Mdes {
+    position: absolute;
+    top: 45%;
+    left: 30.8%;
+  }
+  
+  
+  #tituloConst {
+    position: absolute;
+    top: 12%;
+    left: 38.7%;
+  }
+  
+  #constituicao {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+  }
+  
+  #Mcon {
+    position: absolute;
+    top: 45%;
+    left: 40.8%;
+  }
+  
+  #tituloInt {
+    position: absolute;
+    top: 12%;
+    left: 59%;
+  }
+  
+  #inteligencia {
+    position: absolute;
+    top: 20%;
+    left: 60%;
+  }
+  
+  #Mint {
+    position: absolute;
+    top: 45%;
+    left: 60.9%;
+  }
+  
+  
+  #tituloSab {
+    position: absolute;
+    top: 12%;
+    left: 69.5%;
+  }
+  
+  #sabedoria {
+    position: absolute;
+    top: 20%;
+    left: 70%;
+  }
+  
+  #Msab {
+    position: absolute;
+    top: 45%;
+    left: 70.9%;
+  }
+  
+  #tituloCar {
+    position: absolute;
+    top: 12%;
+    left: 79.5%;
+  }
+  
+  #carisma {
+    position: absolute;
+    top: 20%;
+    left: 80%;
+  }
+  
+  #Mcar {
+    position: absolute;
+    top: 45%;
+    left: 80.9%;
+  }
+  
+  
+  .def select {
+    height: 50px;
+    text-align: center;
+    margin-left: 30px;
+    font-size: 20px;
+    margin-top: 30px;
+    background-color: transparent;
+    border: 0;
+    transition: 0.5s;
+    border-radius: 20px;
+  
+  }
+  
+  .def select:hover {
+    color: #fff;
+    background-color: #000;
+  }
+  
+  .calc {
+    padding-top: 30px;
+  }
+  
+  .calc button {
+    height: 40px;
+    width: 150px;
+    font-size: 18px;
+    background-color: transparent;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .calc button::after {
+    content: " ";
+    cursor: pointer;
+    position: absolute;
+    width: 0%;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s ease-in-out;
+  
+  }
+  
+  .calc button:hover::after {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+  
+  }
+  
+  .saidas {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 20px;
+  }
+  
+  .saidas input[type="checkbox"] {
+    height: 15px;
+    width: 15px;
+  }
+  
+  .saidas input {
+    height: 25px;
+    width: 25px;
+    text-align: center;
+  }
+  
+  .maos {
+    text-align: center;
+    padding-top: 30px;
+  }
+  
+  .maos select {
+    background-color: transparent;
+    text-align: center;
+    margin: 0;
+    border: 0;
+    font-size: 18px;
+    border-radius: 20px;
+    transition: 0.5s;
+    height: 40px;
+    width: 300px;
+    margin-left: 20px;
+  }
+  
+  .maos select:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  #add_item {
+    width: 400px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateX(calc(100% - 50%));
+  }
+  
+  #remov_item {
+    width: 400px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translateX(calc(100% - 50%));
+  }
+  
+  .saidaGerson div {
+    margin-left: 1200px;
+  }
+  
+  nav.menu {
+    width: 80px;
+    height: 100%;
+    background-color: #202020;
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 rgb(109, 109, 109);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 1;
+  }
+  
+  nav.menu.expandir {
+    width: 300px;
+  }
+  
+  span {
+    font-size: 18px;
+  }
+  
+  .expandir {
+    width: 100%;
+    padding-left: 10px;
+  }
+  
+  .expandir>i {
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+  }
+  
+  ul {
+    height: 100%;
+    list-style-type: none;
+    padding-left: 0;
+    word-break: keep-all;
+  }
+  
+  ul li.itemMenu {
+    transition: 0.2s;
+  }
+  
+  ul li.ativo {
+    background-color: rgb(109, 109, 109);
+    padding-left: 10px;
+  }
+  
+  ul li.ativo span {
+    font-size: 18px;
+  }
+  
+  ul li.itemMenu:hover {
+    background-color: rgb(109, 109, 109);
+  }
+  
+  ul li.itemMenu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+  }
+  
+  ul li.itemMenu a .txtLink {
+    margin-left: 70px;
+    transition: 0.5s;
+    opacity: 0;
+  }
+  
+  nav.menu.expandir .txtLink {
+    margin-left: 40px;
+    opacity: 1;
+  }
+  
+  ul li.itemMenu a .icon>i {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px rgb(0, 0, 0) inset !important;
+    -webkit-text-fill-color: white;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(179, 179, 179, 0.514);
+    text-align: center;
+    backdrop-filter: blur(5px);
+  }
+  
+  .modal-contente {
+    position: relative;
+    background-color: #fefefea1;
+    margin: 5% auto;
+    padding: 80px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 60%;
+    color: black;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+  }
+  
+  .modal-contente .saidaAbidlidade {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .modal-contente #saidaskillsGeral {
+    position: absolute;
+  }
+  
+  .modal-contente #saidaskillsRaca {
+    position: absolute;
+    right: 10%;
+  }
+  
+  .modal-contente #saidaskillsClasse {
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+  }
+  
+  .modal-contente #saidaskillsOrigem {
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+  }
+  
+  .modal_skills {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    backdrop-filter: blur(5px);
+  }
+  
+  .modal-skills {
+    background-color: #fefefea1;
+    margin: 5% auto;
+    padding: 80px;
+    border: 1px solid #888;
+    width: 80%;
+    color: black;
+    position: relative;
+    border-radius: 20px;
+    grid-column: 50% 50%;
+    grid-template-columns: 50% 50%;
+    text-align: left;
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+  }
+  
+  .geral {
+    width: 100px;
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    border-radius: 10px;
+    border: 0;
+  }
+  
+  #bnt-origem {
+    width: 100px;
+    position: absolute;
+    top: 4px;
+    left: 120px;
+    border-radius: 10px;
+    border: 0;
+  }
+  
+  #bnt-classe {
+    width: 100px;
+    position: absolute;
+    top: 4px;
+    left: 234px;
+    border-radius: 10px;
+    border: 0;
+  }
+  
+  #bnt-deus {
+    width: 100px;
+    position: absolute;
+    top: 4px;
+    left: 354px;
+    border-radius: 10px;
+    border: 0;
+  }
+  
+  #bnt-tormenta {
+    width: 100px;
+    position: absolute;
+    top: 4px;
+    left: 474px;
+    border-radius: 10px;
+    border: 0;
+  }
+  
+  .toto {
+    display: none;
+  }
+  
+  .modal-content {
+    background-color: #fefefea1;
+    margin: 5% auto;
+    padding: 80px;
+    border: 1px solid #888;
+    width: 80%;
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Três colunas de largura igual */
+    gap: 20px;
+    /* Espaçamento entre as colunas */
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+    backdrop-filter: blur(10px);
+  }
+  
+  .close {
+    text-align: center;
+    color: #616161;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 0%;
+    right: 1%;
+  }
+  
+  .close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .pericias {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .pericias:focus {
+    outline: none;
+  }
+  
+  .modal-content input[type="checkbox"] {
+    color: blue;
+  }
+  
+  .poderes_gerais {
+    font-size: 18px;
+  }
+  
+  .arma1 {
+    font-size: 20px;
+    position: absolute;
+    top: 70%;
+    left: 25%;
+  }
+  
+  .arma2 {
+    font-size: 20px;
+    position: absolute;
+    top: 70%;
+    left: 65%;
+    transform: translateX(calc(100% - 50%));
+  }
+  
+  .toto2,
+  .toto3,
+  .toto4,
+  .toto5 {
+    display: none;
+  }
